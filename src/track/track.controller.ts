@@ -35,6 +35,10 @@ export class TrackController {
     @Post('/comment')
     addComment(@Body() dto: CreateCommentDto) {
       return this.trackService.addComment(dto); 
+  }
+    @Post('/listen/:id')
+    liisten(@Param('id') id: ObjectId) {
+      return this.trackService.listen(id);
     }
 
 }
